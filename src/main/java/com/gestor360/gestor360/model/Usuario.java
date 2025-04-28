@@ -1,6 +1,7 @@
 package com.gestor360.gestor360.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ public class Usuario {
     @GeneratedValue
     private Long idUsuario;
 
+    @NotNull(message = "O nome não pode ser nulo")
     @Column(nullable = false, length = 20)
     private String nome;
 
